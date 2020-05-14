@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-{% for project in proyects %}
+{% for project in projects %}
 	      <!-- Proyecto -->
 	      <div class="row project">  	
 	      	<div class="col-lg-3 col-md-4 offset-lg-1">
@@ -19,7 +19,9 @@
 	        <div class="col-lg-7 col-md-8">
 	      		<h2 class="section-heading title">{{project.title}}</h2>   
 	          <p>{{project.description}}</p>
-	          <!--<p><a href="http://google.com">Más información</a></p>-->
+			  {% if project.link %}
+	          	<p><a href="{{project.link}}">Más información</a></p>
+			  {% endif %}
 	      	</div>
 	      </div>
 {% endfor %}
